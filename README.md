@@ -1,4 +1,4 @@
-# DevSetup 🚀
+# DevSetup
 
 **Production-Ready Developer Project Generator + Project Health Doctor**
 
@@ -10,14 +10,14 @@ Create fully configured, production-ready projects in seconds. Fix existing proj
 
 ---
 
-## ✨ Why DevSetup?
+## Why DevSetup?
 
 DevSetup does two things:
 
 1. **Generate new projects** - Create production-ready apps in 30 seconds
 2. **Fix existing projects** - Scan and auto-fix configuration issues
 
-### 🚀 Generate New Projects
+### Generate New Projects
 
 Most developers spend hours configuring new projects with the same tools over and over. DevSetup eliminates this repetitive work.
 
@@ -27,17 +27,16 @@ Most developers spend hours configuring new projects with the same tools over an
 npm create vite@latest
 # Install ESLint... configure... install Prettier...
 # Setup Docker... GitHub Actions... Husky...
-# Finally ready to code 😓
 ```
 
 **With DevSetup:**
 ```bash
 devsetup react my-app
 cd my-app && npm install && npm run dev
-# Start coding immediately! 🎉
+# Start coding immediately
 ```
 
-### 🏥 Fix Existing Projects
+### Fix Existing Projects
 
 Inherited a legacy codebase? Configuration drift across team projects? **DevSetup Doctor** automatically fixes common issues.
 
@@ -46,17 +45,17 @@ cd existing-project
 devsetup doctor
 
 # Automatically fixes:
-# ✓ Missing ESLint configuration
-# ✓ Missing Prettier setup
-# ✓ Missing TypeScript config
-# ✓ Missing package.json scripts
-# ✓ Missing GitHub Actions
-# ✓ And more...
+# - Missing ESLint configuration
+# - Missing Prettier setup
+# - Missing TypeScript config
+# - Missing package.json scripts
+# - Missing GitHub Actions
+# - And more...
 ```
 
 ---
 
-## 🎯 Features
+## Features
 
 ### Command 1: `devsetup react <name>` - Project Generator
 - ✅ **React + TypeScript + Vite** - Modern React development
@@ -108,7 +107,7 @@ npm install -g devsetup
 npx devsetup react my-app
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Create a New Project
 
@@ -119,27 +118,27 @@ devsetup react my-app
 You'll be guided through an interactive setup:
 
 ```
-🚀 DevSetup - Production-Ready Project Generator
+DevSetup - Production-Ready Project Generator
 
-✔ Use Tailwind CSS? … yes
-✔ Add Docker support? … yes
-✔ Add GitHub Actions CI/CD? … yes
-✔ Add Husky Git Hooks? … yes
-✔ Add Example Authentication Module? … no
-✔ Add Example API Service Layer? … yes
-✔ Add Path Aliases (@/ for src/)? … yes
-✔ Package Manager: › npm
+Use Tailwind CSS? yes
+Add Docker support? yes
+Add GitHub Actions CI/CD? yes
+Add Husky Git Hooks? yes
+Add Example Authentication Module? no
+Add Example API Service Layer? yes
+Add Path Aliases (@/ for src/)? yes
+Package Manager: npm
 
-✓ Project structure created
-✓ Configuration files generated
-✓ Source files generated
-✓ Docker configuration generated
-✓ GitHub Actions workflow generated
-✓ README generated
-✓ Git repository initialized
-✓ Husky configured
+Project structure created
+Configuration files generated
+Source files generated
+Docker configuration generated
+GitHub Actions workflow generated
+README generated
+Git repository initialized
+Husky configured
 
-✅ Project created successfully!
+Project created successfully
 ```
 
 ### Start Development
@@ -159,22 +158,22 @@ devsetup doctor
 Interactive mode lets you choose which issues to fix:
 
 ```
-🏥 DevSetup Doctor
+DevSetup Doctor
 
 Analyzing your project...
-✓ Detected: react
+Detected: react
 
-📋 Issues Found:
+Issues Found:
 
-❌ Errors:
-  🔧 Missing tsconfig.json [fixable]
+Errors:
+  Missing tsconfig.json [fixable]
 
-⚠️  Warnings:
-  🔧 ESLint not configured [fixable]
-  🔧 Prettier not configured [fixable]
-  🔧 Missing package.json scripts [fixable]
+Warnings:
+  ESLint not configured [fixable]
+  Prettier not configured [fixable]
+  Missing package.json scripts [fixable]
 
-? Would you like to fix these issues? (Y/n)
+Would you like to fix these issues? (Y/n)
 ```
 
 **Auto-fix everything:**
@@ -186,7 +185,7 @@ See [DOCTOR_GUIDE.md](DOCTOR_GUIDE.md) for complete documentation.
 
 ---
 
-## 📖 Commands
+## Commands
 - React 18
 - TypeScript 5
 - Vite 5
