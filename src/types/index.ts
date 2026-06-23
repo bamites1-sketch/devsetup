@@ -37,39 +37,13 @@ export interface DoctorIssue {
 
 export interface DoctorConfig {
   projectRoot: string;
-  projectType: 'react' | 'nextjs' | 'vue' | 'node' | 'typescript';
-  autoFix: boolean;
-  dryRun: boolean;
-}
-
-export interface FixResult {
-  issueId: string;
-  title: string;
-  success: boolean;
-  error?: string;
-  details?: string[];
-  requiresInstall?: boolean;
-}
-
-// Doctor types
-export interface DoctorIssue {
-  id: string;
-  title: string;
-  description: string;
-  severity: 'error' | 'warning' | 'info';
-  fixable: boolean;
-  category: 'config' | 'dependencies' | 'linting' | 'formatting' | 'typescript' | 'vcs' | 'ci' | 'editor' | 'scripts' | 'metadata';
-}
-
-export interface DoctorConfig {
-  projectRoot: string;
   projectType: 'react' | 'nextjs' | 'vue' | 'node' | 'typescript' | null;
   autoFix: boolean;
   dryRun: boolean;
 }
 
 export interface FixResult {
-  id: string;
+  issueId: string;
   title: string;
   success: boolean;
   error?: string;

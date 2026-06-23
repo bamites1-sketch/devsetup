@@ -390,7 +390,7 @@ trim_trailing_whitespace = false
 
 // Helper functions for generating configs
 
-function getEslintConfig(projectType: string): string {
+function getEslintConfig(projectType: string | null): string {
   if (projectType === 'react' || projectType === 'nextjs') {
     return `module.exports = {
   root: true,
@@ -433,7 +433,7 @@ function getEslintConfig(projectType: string): string {
 `;
 }
 
-function getTsconfigForProject(projectType: string): object {
+function getTsconfigForProject(projectType: string | null): object {
   if (projectType === 'react' || projectType === 'nextjs') {
     return {
       compilerOptions: {
@@ -475,7 +475,7 @@ function getTsconfigForProject(projectType: string): object {
   };
 }
 
-function getGitignoreForProject(projectType: string): string {
+function getGitignoreForProject(projectType: string | null): string {
   const base = `# Dependencies
 node_modules/
 .pnp
@@ -520,7 +520,7 @@ pnpm-debug.log*
   return base;
 }
 
-function getCIConfigForProject(projectType: string): string {
+function getCIConfigForProject(projectType: string | null): string {
   const pm = 'npm';
   const installCmd = 'npm ci';
   

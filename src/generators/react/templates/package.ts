@@ -66,7 +66,7 @@ export function getPackageJson(config: ProjectConfig): string {
   };
 
   if (config.useHusky) {
-    packageJson['lint-staged'] = {
+    (packageJson as Record<string, unknown>)['lint-staged'] = {
       '*.{ts,tsx}': ['eslint --fix', 'prettier --write'],
     };
   }
