@@ -10,6 +10,21 @@ Create fully configured, production-ready projects in seconds. Fix existing proj
 
 ---
 
+## Table of Contents
+
+- [Why DevSetup?](#why-devsetup)
+- [Features](#features)
+- [Installation](#installation)
+- [Quick Start](#quick-start)
+- [Commands](#commands)
+- [Generated Project Structure](#generated-project-structure)
+- [Development](#development)
+- [Publishing](#publishing)
+- [Contributing](#contributing)
+- [License](#license)
+
+---
+
 ## Why DevSetup?
 
 DevSetup does two things:
@@ -21,24 +36,22 @@ DevSetup does two things:
 
 Most developers spend hours configuring new projects with the same tools over and over. DevSetup eliminates this repetitive work.
 
-**Before DevSetup:**
+**Before:**
 ```bash
 # 2-3 hours of manual setup
 npm create vite@latest
-# Install ESLint... configure... install Prettier...
-# Setup Docker... GitHub Actions... Husky...
+# Install ESLint, Prettier, Docker, GitHub Actions, Husky...
 ```
 
-**With DevSetup:**
+**After:**
 ```bash
 devsetup react my-app
 cd my-app && npm install && npm run dev
-# Start coding immediately
 ```
 
 ### Fix Existing Projects
 
-Inherited a legacy codebase? Configuration drift across team projects? **DevSetup Doctor** automatically fixes common issues.
+**DevSetup Doctor** automatically fixes common configuration issues in existing projects.
 
 ```bash
 cd existing-project
@@ -57,41 +70,34 @@ devsetup doctor
 
 ## Features
 
-### Command 1: `devsetup react <name>` - Project Generator
-- **React + TypeScript + Vite** - Modern React development
+### Command 1: `devsetup react <name>`
 
-### What You Get Out of the Box
+Generate React + TypeScript + Vite projects with:
 
-- **Lightning Fast** - Vite for instant HMR and builds
-- **TypeScript** - Full type safety
-- **Testing Ready** - Vitest configured with examples
-- **Code Quality** - ESLint + Prettier pre-configured
-- **Docker Support** - Production-ready containerization
-- **CI/CD** - GitHub Actions workflow included
-- **Git Hooks** - Husky + lint-staged for quality gates
-- **API Layer** - Optional axios-based service
-- **Auth Module** - Optional authentication service
-- **Path Aliases** - Clean imports with @/ prefix
-- **Tailwind CSS** - Optional utility-first styling
+- **React 18** - Latest React with hooks
+- **TypeScript 5** - Full type safety
+- **Vite 5** - Lightning-fast dev server
+- **Vitest** - Fast unit testing
+- **ESLint + Prettier** - Code quality tools
+- **Optional:** Tailwind CSS, Docker, GitHub Actions, Husky, API service, Auth module, Path aliases
 
-### Command 2: `devsetup doctor` - Project Health Check
+### Command 2: `devsetup doctor`
 
-Scan and automatically fix issues in existing projects:
+Scan and fix existing projects:
 
-- **ESLint** - Add missing configuration and dependencies
+- **ESLint** - Add missing configuration
 - **Prettier** - Setup code formatting
-- **TypeScript** - Fix tsconfig issues, enable strict mode
-- **Scripts** - Add missing lint, format, test scripts
+- **TypeScript** - Fix tsconfig, enable strict mode
+- **Scripts** - Add lint, format, test scripts
 - **GitHub Actions** - Add CI/CD workflow
-- **.gitignore** - Create comprehensive ignore file
+- **.gitignore** - Create ignore file
 - **.editorconfig** - Ensure editor consistency
-- **And more** - Package.json metadata, Git initialization
+- **Metadata** - Fix package.json fields
 
-**Perfect for:**
-- Legacy projects needing modernization
-- Enforcing team standards
-- Onboarding projects to best practices
-- Quick health checks
+**Doctor Options:**
+- `devsetup doctor` - Interactive mode (choose what to fix)
+- `devsetup doctor --fix` - Fix selected issues
+- `devsetup doctor --auto` - Auto-fix all issues
 
 ---
 
@@ -102,10 +108,12 @@ Scan and automatically fix issues in existing projects:
 npm install -g devsetup
 ```
 
-### One-time Use (npx)
+### One-time Use
 ```bash
 npx devsetup react my-app
 ```
+
+---
 
 ## Quick Start
 
@@ -115,33 +123,16 @@ npx devsetup react my-app
 devsetup react my-app
 ```
 
-You'll be guided through an interactive setup:
+Interactive prompts:
+- Use Tailwind CSS?
+- Add Docker support?
+- Add GitHub Actions CI/CD?
+- Add Husky Git Hooks?
+- Add Example Authentication Module?
+- Add Example API Service Layer?
+- Add Path Aliases (@/ for src/)?
+- Package Manager: npm / pnpm / yarn
 
-```
-DevSetup - Production-Ready Project Generator
-
-Use Tailwind CSS? yes
-Add Docker support? yes
-Add GitHub Actions CI/CD? yes
-Add Husky Git Hooks? yes
-Add Example Authentication Module? no
-Add Example API Service Layer? yes
-Add Path Aliases (@/ for src/)? yes
-Package Manager: npm
-
-Project structure created
-Configuration files generated
-Source files generated
-Docker configuration generated
-GitHub Actions workflow generated
-README generated
-Git repository initialized
-Husky configured
-
-Project created successfully
-```
-
-### Start Development
 ```bash
 cd my-app
 npm install
@@ -155,148 +146,76 @@ cd existing-project
 devsetup doctor
 ```
 
-Interactive mode lets you choose which issues to fix:
-
-```
-DevSetup Doctor
-
-Analyzing your project...
-Detected: react
-
-Issues Found:
-
-Errors:
-  Missing tsconfig.json [fixable]
-
-Warnings:
-  ESLint not configured [fixable]
-  Prettier not configured [fixable]
-  Missing package.json scripts [fixable]
-
-Would you like to fix these issues? (Y/n)
-```
+The doctor will:
+1. Detect your project type (React, Next.js, Node.js, etc.)
+2. Scan for configuration issues
+3. Show a detailed report
+4. Ask which issues to fix
 
 **Auto-fix everything:**
 ```bash
 devsetup doctor --auto
 ```
 
-See [DOCTOR_GUIDE.md](DOCTOR_GUIDE.md) for complete documentation.
-
 ---
 
 ## Commands
-- React 18
-- TypeScript 5
-- Vite 5
-- Vitest for testing
-- ESLint & Prettier
-- Optional: Tailwind CSS, Docker, GitHub Actions, Husky, API service, Auth module
+
+### `devsetup react <project-name>`
+
+Creates a new React + TypeScript + Vite project.
+
+**Example:**
+```bash
+devsetup react my-awesome-app
+```
+
+### `devsetup doctor`
+
+Scans and fixes configuration issues in existing projects.
+
+**Options:**
+- `--fix` - Show issues, then fix selected ones
+- `--auto` - Auto-fix all issues without prompting
+
+**Examples:**
+```bash
+devsetup doctor           # Interactive mode
+devsetup doctor --fix     # Select issues to fix
+devsetup doctor --auto    # Fix everything
+```
 
 ---
 
-## 🎨 Interactive Configuration
-
-DevSetup asks you what you need:
-
-| Option | Description |
-|--------|-------------|
-| **Tailwind CSS** | Utility-first CSS framework |
-| **Docker** | Dockerfile + docker-compose.yml |
-| **GitHub Actions** | Automated CI/CD pipeline |
-| **Husky** | Git hooks for pre-commit checks |
-| **Auth Module** | Ready-to-use authentication service |
-| **API Service** | Axios-based HTTP client with interceptors |
-| **Path Aliases** | Use @/ instead of ../../.. |
-| **Package Manager** | npm, pnpm, or yarn |
-
----
-
-## 📁 Generated Project Structure
+## Generated Project Structure
 
 ```
 my-app/
-├── .github/
-│   └── workflows/
-│       └── ci.yml              # GitHub Actions CI/CD
+├── .github/workflows/
+│   └── ci.yml              # CI/CD (optional)
 ├── src/
-│   ├── components/             # React components
-│   ├── pages/                  # Page components
-│   ├── hooks/                  # Custom hooks
-│   ├── services/               # API & business logic
-│   │   ├── api.ts             # HTTP client (optional)
-│   │   └── auth.ts            # Auth service (optional)
-│   ├── utils/                  # Helper functions
-│   ├── types/                  # TypeScript types
-│   ├── assets/                 # Static assets
-│   ├── App.tsx                 # Root component
-│   └── main.tsx                # Entry point
-├── tests/                      # Test files
-├── public/                     # Public assets
-├── Dockerfile                  # Docker config (optional)
-├── docker-compose.yml          # Docker compose (optional)
-├── vite.config.ts              # Vite configuration
-├── vitest.config.ts            # Vitest configuration
-├── tsconfig.json               # TypeScript config
-├── .eslintrc.cjs               # ESLint config
-├── .prettierrc.json            # Prettier config
-├── .editorconfig               # Editor config
-├── .env.example                # Environment template
-└── README.md                   # Project documentation
+│   ├── components/         # React components
+│   ├── pages/              # Page components
+│   ├── hooks/              # Custom hooks
+│   ├── services/           # API & Auth (optional)
+│   ├── utils/              # Helper functions
+│   ├── types/              # TypeScript types
+│   ├── assets/             # Static assets
+│   ├── App.tsx             # Root component
+│   └── main.tsx            # Entry point
+├── tests/                  # Test files
+├── public/                 # Public assets
+├── Dockerfile              # (optional)
+├── docker-compose.yml      # (optional)
+├── vite.config.ts
+├── vitest.config.ts
+├── tsconfig.json
+├── .eslintrc.cjs
+├── .prettierrc.json
+└── README.md
 ```
 
----
-
-## 🧪 Testing
-
-All generated projects include:
-
-- **Vitest** - Fast unit test framework
-- **React Testing Library** - Component testing
-- **Coverage Reports** - Built-in coverage tracking
-- **Example Tests** - Learn by example
-
-```bash
-npm run test              # Run tests once
-npm run test:watch        # Watch mode
-npm run test:coverage     # Generate coverage
-```
-
----
-
-## 🐳 Docker Support
-
-If you enable Docker, you get:
-
-- **Multi-stage Dockerfile** - Optimized production builds
-- **docker-compose.yml** - One-command deployment
-- **.dockerignore** - Minimal image size
-- **Nginx config** - Production-ready serving
-
-```bash
-docker-compose up --build
-```
-
----
-
-## 🔄 CI/CD with GitHub Actions
-
-Generated workflow includes:
-
-- ✅ Install dependencies
-- ✅ Run linting
-- ✅ Run tests
-- ✅ Build application
-- ✅ Upload coverage reports
-- ✅ Matrix testing (Node 18 & 20)
-
-Push to GitHub and your CI runs automatically!
-
----
-
-## 🛠️ Development Tools
-
-### Built-in Scripts
+### Available Scripts
 
 ```bash
 npm run dev          # Start dev server
@@ -305,117 +224,216 @@ npm run preview      # Preview build
 npm run lint         # Run ESLint
 npm run format       # Run Prettier
 npm run test         # Run tests
+npm run test:watch   # Test watch mode
+npm run test:coverage # Coverage report
 ```
 
-### Code Quality
-
-- **ESLint** - Catch bugs and enforce standards
-- **Prettier** - Consistent code formatting
-- **EditorConfig** - Consistent editor settings
-- **Husky** - Pre-commit hooks (optional)
-- **lint-staged** - Lint only changed files (optional)
-
 ---
 
-## 🗺️ Roadmap
+## Development
 
-### Upcoming Templates
-- [ ] Next.js (React framework)
-- [ ] Express (Node.js backend)
-- [ ] NestJS (Enterprise Node.js)
-- [ ] FastAPI (Python backend)
-- [ ] Electron (Desktop apps)
-- [ ] React Native (Mobile apps)
+### Prerequisites
 
-### Future Features
-- [ ] Plugin marketplace
-- [ ] Community templates
-- [ ] Remote template support
-- [ ] AI-assisted generation
-- [ ] Template versioning
-- [ ] Team presets
-- [ ] Custom template creation
-- [ ] Configuration profiles
+- Node.js 16+
+- npm, pnpm, or yarn
+- Git
 
----
+### Setup
 
-## 🤝 Contributing
-
-We welcome contributions! Here's how you can help:
-
-### Getting Started
-
-1. **Fork the repository**
 ```bash
-git clone https://github.com/yourusername/devsetup.git
+# Clone the repository
+git clone https://github.com/bamites1-sketch/devsetup.git
 cd devsetup
-```
 
-2. **Install dependencies**
-```bash
+# Install dependencies
 npm install
-```
 
-3. **Run tests**
-```bash
-npm test
-```
-
-4. **Build the project**
-```bash
+# Build the project
 npm run build
-```
 
-5. **Test locally**
-```bash
+# Link for local testing
 npm link
+
+# Test the CLI
 devsetup react test-project
-devsetup doctor  # Test the doctor command
+devsetup doctor
 ```
 
-### Development Guidelines
+### Running Tests
 
-- Write tests for new features
-- Maintain 80%+ code coverage
-- Follow existing code style
-- Update documentation
-- Add changeset for releases
+```bash
+npm test              # Run tests once
+npm run test:watch    # Watch mode
+npm run test:coverage # With coverage
+```
+
+### Code Style
+
+```bash
+npm run lint          # Run ESLint
+npm run format        # Run Prettier
+```
+
+**Guidelines:**
+- Use TypeScript for all code
+- Follow existing naming conventions
+- Keep functions small and focused
+- Add tests for new features
+- Maintain 80%+ test coverage
+
+### Project Structure
+
+```
+devsetup/
+├── src/
+│   ├── cli.ts                  # CLI entry point
+│   ├── commands/               # Command handlers
+│   │   ├── react.ts
+│   │   └── doctor.ts
+│   ├── generators/             # Template generators
+│   │   └── react/
+│   │       ├── index.ts
+│   │       └── templates/
+│   ├── utils/                  # Utility functions
+│   │   ├── doctor/             # Doctor utilities
+│   │   ├── fs-helpers.ts
+│   │   ├── validation.ts
+│   │   └── ui.ts
+│   └── types/                  # TypeScript types
+├── tests/                      # Test files
+└── ...config files
+```
+
+---
+
+## Publishing
+
+### Prerequisites
+
+1. npm account ([sign up here](https://www.npmjs.com/signup))
+2. Authentication: `npm login`
+
+### Steps
+
+```bash
+# 1. Test everything works
+npm install
+npm run build
+npm test
+npm link
+
+# 2. Test the CLI
+devsetup react test-app
+cd test-app && npm install && npm run dev
+
+# 3. Publish
+npm publish
+```
+
+**If name is taken:**
+```bash
+# Use scoped package
+# Change package.json name to "@yourusername/devsetup"
+npm publish --access public
+```
+
+### Version Updates
+
+```bash
+npm version patch  # Bug fixes (1.0.1)
+npm version minor  # New features (1.1.0)
+npm version major  # Breaking changes (2.0.0)
+git push --follow-tags
+npm publish
+```
+
+---
+
+## Contributing
+
+We welcome contributions!
+
+### How to Contribute
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Make your changes
+4. Add tests
+5. Run `npm test` and `npm run lint`
+6. Commit (`git commit -m 'Add amazing feature'`)
+7. Push (`git push origin feature/amazing-feature`)
+8. Open a Pull Request
 
 ### Areas for Contribution
 
-- 🆕 New project templates
-- 🏥 New doctor checks/fixes
-- 🐛 Bug fixes
-- 📝 Documentation improvements
-- ✨ New features
-- 🧪 More tests
-- 🎨 Template improvements
+- New project templates (Next.js, Express, etc.)
+- New doctor checks and fixes
+- Bug fixes
+- Documentation improvements
+- Tests
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) and [DOCTOR_GUIDE.md](DOCTOR_GUIDE.md) for detailed guidelines.
+### Development Setup
 
----
-
-## 📄 License
-
-MIT © DevSetup Team
+See the [Development](#development) section above.
 
 ---
 
-## 💬 Support
+## Roadmap
 
-- 🐛 [Report a Bug](https://github.com/yourusername/devsetup/issues)
-- 💡 [Request a Feature](https://github.com/yourusername/devsetup/issues)
-- 📖 [Read the Docs](https://github.com/yourusername/devsetup#readme)
-- ⭐ [Star on GitHub](https://github.com/yourusername/devsetup)
+### Upcoming Templates
+- Next.js
+- Express
+- NestJS
+- FastAPI
+- Electron
+- React Native
+
+### Doctor Enhancements
+- `--dry-run` flag
+- Custom rule profiles
+- Team configuration presets
+- Dependency audit
+- Security checks
+
+### Future Features
+- Plugin marketplace
+- Community templates
+- Remote template support
+- Configuration profiles
 
 ---
 
-## 🌟 Show Your Support
+## License
 
-If DevSetup saves you time, give it a ⭐️ on GitHub!
+MIT License
 
-**Two powerful commands:**
-- `devsetup react <name>` - Generate new projects instantly
-- `devsetup doctor` - Fix existing projects automatically
+Copyright (c) 2024 Beamlak Tesfahun
 
-Built with ❤️ by developers, for developers.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+## Support
+
+- **Issues:** https://github.com/bamites1-sketch/devsetup/issues
+- **Repository:** https://github.com/bamites1-sketch/devsetup
+
+---
+
+**Built by Beamlak Tesfahun**
