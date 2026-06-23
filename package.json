@@ -37,12 +37,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bamit99/devsetup.git"
+    "url": "https://github.com/bamites1-sketch/devsetup.git"
   },
   "bugs": {
-    "url": "https://github.com/bamit99/devsetup/issues"
+    "url": "https://github.com/bamites1-sketch/devsetup/issues"
   },
-  "homepage": "https://github.com/bamit99/devsetup#readme",
+  "homepage": "https://github.com/bamites1-sketch/devsetup#readme",
   "engines": {
     "node": ">=16.0.0"
   },

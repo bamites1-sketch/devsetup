@@ -6,7 +6,7 @@ Create fully configured, production-ready projects in seconds. Fix existing proj
 
 [![npm version](https://img.shields.io/npm/v/devsetup.svg)](https://www.npmjs.com/package/devsetup)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![CI](https://github.com/bamit99/devsetup/workflows/CI/badge.svg)](https://github.com/bamit99/devsetup/actions)
+[![CI](https://github.com/bamites1-sketch/devsetup/workflows/CI/badge.svg)](https://github.com/bamites1-sketch/devsetup/actions)
 
 ---
 
