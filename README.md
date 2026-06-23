@@ -58,34 +58,34 @@ devsetup doctor
 ## Features
 
 ### Command 1: `devsetup react <name>` - Project Generator
-- ✅ **React + TypeScript + Vite** - Modern React development
+- **React + TypeScript + Vite** - Modern React development
 
 ### What You Get Out of the Box
 
-- ⚡️ **Lightning Fast** - Vite for instant HMR and builds
-- 🎯 **TypeScript** - Full type safety
-- 🧪 **Testing Ready** - Vitest configured with examples
-- 📝 **Code Quality** - ESLint + Prettier pre-configured
-- 🐳 **Docker Support** - Production-ready containerization
-- 🔄 **CI/CD** - GitHub Actions workflow included
-- 🐕 **Git Hooks** - Husky + lint-staged for quality gates
-- 🌐 **API Layer** - Optional axios-based service
-- 🔐 **Auth Module** - Optional authentication service
-- 📦 **Path Aliases** - Clean imports with @/ prefix
-- 🎨 **Tailwind CSS** - Optional utility-first styling
+- **Lightning Fast** - Vite for instant HMR and builds
+- **TypeScript** - Full type safety
+- **Testing Ready** - Vitest configured with examples
+- **Code Quality** - ESLint + Prettier pre-configured
+- **Docker Support** - Production-ready containerization
+- **CI/CD** - GitHub Actions workflow included
+- **Git Hooks** - Husky + lint-staged for quality gates
+- **API Layer** - Optional axios-based service
+- **Auth Module** - Optional authentication service
+- **Path Aliases** - Clean imports with @/ prefix
+- **Tailwind CSS** - Optional utility-first styling
 
 ### Command 2: `devsetup doctor` - Project Health Check
 
 Scan and automatically fix issues in existing projects:
 
-- 🔧 **ESLint** - Add missing configuration and dependencies
-- 💅 **Prettier** - Setup code formatting
-- 📝 **TypeScript** - Fix tsconfig issues, enable strict mode
-- 📦 **Scripts** - Add missing lint, format, test scripts
-- 🔄 **GitHub Actions** - Add CI/CD workflow
-- 📂 **.gitignore** - Create comprehensive ignore file
-- ⚙️ **.editorconfig** - Ensure editor consistency
-- 🎯 **And more...** - Package.json metadata, Git initialization
+- **ESLint** - Add missing configuration and dependencies
+- **Prettier** - Setup code formatting
+- **TypeScript** - Fix tsconfig issues, enable strict mode
+- **Scripts** - Add missing lint, format, test scripts
+- **GitHub Actions** - Add CI/CD workflow
+- **.gitignore** - Create comprehensive ignore file
+- **.editorconfig** - Ensure editor consistency
+- **And more** - Package.json metadata, Git initialization
 
 **Perfect for:**
 - Legacy projects needing modernization
@@ -95,7 +95,7 @@ Scan and automatically fix issues in existing projects:
 
 ---
 
-## 📦 Installation
+## Installation
 
 ### Global Install (Recommended)
 ```bash
